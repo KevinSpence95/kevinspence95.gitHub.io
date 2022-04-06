@@ -193,8 +193,8 @@ margin:0rem 0rem 0rem 1rem;
 /*PORTFOLIO SECTION*/
 #projects {
   padding:1rem;
- 
 }
+
 #projects h2{
   margin-bottom:1rem;
 }
@@ -202,7 +202,7 @@ margin:0rem 0rem 0rem 1rem;
 .grid_container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
     grid-template-rows: 1fr 1fr;
     grid-gap: 2rem;
     padding:1rem;
@@ -223,7 +223,6 @@ margin:0rem 0rem 0rem 1rem;
     height: 100%; 
     object-fit: fill;
     border-radius: 1.25rem;;
-    
 }
 
 #form_section {

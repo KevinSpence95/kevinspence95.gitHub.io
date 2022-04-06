@@ -202,11 +202,12 @@ margin:0rem 0rem 0rem 1rem;
 .grid_container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    /*grid-template-rows: 1fr 1fr;*/
     grid-gap: 2rem;
     padding:1rem;
     margin:auto;
+    background-color: yellow;
 }
 
 .project_tile {

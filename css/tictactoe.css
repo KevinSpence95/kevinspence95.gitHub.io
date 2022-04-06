@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body{
+    font-family: 'Permanent Marker';
+    background-image: url(http://www.hobart.k12.ok.us/HIGHSCHOOL/hsfaculty/Quintero/Notebook-Paper-Background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100% 100%;
+  }
+  
+  #title{
+    font-family: 'Permanent Marker';
+    font-size:80px;
+  }
+  
+  #gameTypeSelector,#start{
+    font-size: 40px;
+    color: black;
+    font-family: 'Permanent Marker';
+    border: 2px solid blue;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    margin:20px
+  }
+  #XOselector{
+    font-size: 40px;
+    color: black;
+    font-family: 'Permanent Marker';
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: red;
+    margin:10px
+  }
+  #reset{
+    font-size: 40px;
+    color: black;
+    font-family: 'Permanent Marker';
+    border: 2px solid blue;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    margin:20px
+  }
+  
+  #board {
+    height: 500px;
+    width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000000;
+    border-radius: 6px;
+    margin-top:1%;
+    margin-bottom:10px;
+  }
+  
+  #TLC,#TE,#TRC,#LE,#C,#RE,#BLC,#BE,#BRC {
+    outline: none;
+    font-family: 'Permanent Marker';
+    font-size:60px;
+    width:30%;
+    margin:6px;
+    padding:30px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: white; 
+    
+  }
+  
+  #player1Score{
+    font-size: 40px;
+    color:red;
+    font-family: 'Permanent Marker';
+    margin:20px
+  }
+  #player2Score{
+   font-size: 40px;
+    color:blue;
+    font-family: 'Permanent Marker';
+    margin:20px 
+  }
+  #turnIndicator{
+    font-size: 40px;
+    font-family: 'Permanent Marker';
+    margin:20px 
+  }

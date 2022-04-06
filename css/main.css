@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root {
+  --color1: #EEEEEE;
+  font-size:16px; /*Default value 16px;*/  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+#navbar {
+  position:fixed;
+  background-color:black;
+  width:30vw;
+  min-width:325px;
+  height:4rem;
+  position:fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color:white;
+}
+
+#navbar ul{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  align-items: center;
+  list-style-type:none;
+  padding:1rem;
+  flex-wrap:wrap;
+  
+}
+
+#navbar li {
+margin-top:.5rem;
+}
+#navbar li:hover {
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  border-bottom-width: thin;
+
+}
+
+#navbar a {
+  font-size:1rem;
+}
+
+#profile_pic {
+  width:200px;
+  border-radius:8rem;
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+
+header h1 {
+  color:white;
+  text-align:center;
+  margin-bottom:1rem;
+}
+header p {
+  color:white;
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+#welcome_section {
+  background:black;
+  width:30vw;
+  min-width:325px;
+  height:100vh;
+  position:fixed;
+  top: 4rem;
+  left: 0px;
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+#footer_content_container {
+  background:black;
+  width:30%;
+  min-width:325px;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+}
+
+#footer_content_container ul {
+  display:flex;
+  flex-direction:row;
+}
+
+#footer_content_container li {
+  margin-top:1rem;
+  margin-bottom:2rem;
+  margin-right:3rem;
+  margin-left:3rem;
+  list-style-type:none;
+}
+
+#footer_content_container i {
+  color:white;
+}
+
+#main_section_container {
+  position: absolute;
+  top:0px;
+  left:clamp(325px, 30%, 30%);;
+  padding: 2rem;
+  height:auto;
+  line-height: 1.5;
+  background:white;
+}
+
+#about_section {
+  background:#EEEEEE;
+  padding:1rem;
+  margin-bottom:2rem;
+}
+
+#about_section #about {
+  margin:1rem;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 2rem;
+  padding-left:2rem;
+  padding-right:2rem;
+  color:black;
+  background-color:white;
+  border: 2px solid black;
+  cursor:pointer;
+  font-weight:bold;
+  letter-spacing:.1rem;
+  margin-left:1rem;
+}
+.btn:hover {
+  color:white;
+  background-color:black;
+}
+
+#education_section {
+  margin:1rem 0rem 1rem 0rem;
+}
+
+#education_section h3{
+  margin:1rem 0rem 0rem 1rem;
+}
+
+#education_section p{
+margin:0rem 0rem 0rem 1rem;
+}
+
+#work_experience_section {
+  background:#EEEEEE;
+}
+
+#work_experience_section h3 {
+ margin:.75rem 3rem .75rem 1rem;
+}
+
+#work_experience_section li {
+ margin:.75rem 3rem .75rem 3rem;
+}
+
+#awards_section h3 {
+  margin-left:1rem;
+}
+
+#awards_section p {
+  margin:.75rem 4rem .75rem 4rem;
+}
+
+.quotesayer {
+  text-align:right;
+  margin-right:5rem;
+}
+
+
+/*PORTFOLIO SECTION*/
+#projects {
+  padding:1rem;
+ 
+}
+#projects h2{
+  margin-bottom:1rem;
+}
+
+.grid_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 2rem;
+    padding:1rem;
+    margin:auto;
+}
+
+.project_tile {
+  border-radius: 1.25rem;;
+}
+
+.project_tile:hover {
+  transform: scale(1.1);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.project_thumb {
+    width: 100%;
+    height: 100%; 
+    object-fit: fill;
+    border-radius: 1.25rem;;
+    
+}
+
+#form_section {
+  background-color:#EEEEEE;
+  padding:1rem;
+  margin-top:2rem;
+}
+
+input, textarea {
+  margin:1rem;
+  width:85%;
+  padding:.5rem;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+}
+
+#form_section p {
+  margin:1rem;
+}
+
+form {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+form li {
+  list-style-type:none;
+}
+
+
+
+
+
+
+/*MEDIA QUERY*/
+@media only screen and (max-width: 815px) {
+  
+  #main_section_container {
+  position:static;
+  padding: 20px;
+  margin-bottom: 110px; 
+}
+  
+#navbar {
+  position:sticky;
+  background-color:black;
+  width:100%;
+  height:4rem;
+  top: 0px;
+  left: 0px;
+}
+  
+#welcome_section {
+  width:30vw;
+  min-width:100%;
+  height:325px;
+  position:static;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+  
+#profile_pic {
+  width:140px;
+  border-radius:8rem;
+}
+
+  
+#footer_content_container {
+  background:black;
+  width:100%;
+  position:static;
+  top:0px;
+  left:0px;
+  display:flex;
+  justify-content:center;
+}
+  
+}

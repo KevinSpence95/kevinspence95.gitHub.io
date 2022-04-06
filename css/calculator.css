@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+* {
+  font-family: 'Audiowide'; 
+}
+
+body {
+  background: linear-gradient(#000000, #0f9b0f); 
+  background-size: cover;
+}
+
+#title {
+    font-size: 75px;
+    color: #0f9b0f;
+    text-align: center;
+    
+  }
+
+#calculator {
+    height: 800px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000000;
+    border: 2px solid #303030;
+    border-radius: 20px;
+    margin-top:2%;
+    margin-bottom:5%;
+    box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px 	#303030;
+  }
+
+#display {
+    color:#0f9b0f;
+    font-size:50px;
+    width: 87%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    padding-top:15px;
+    padding-right:30px;
+    border: 2px solid #0f9b0f;
+    border-radius: 6px;
+    background-color: #000000;
+  }
+
+#clear {
+    outline: none;
+    font-family: 'Audiowide';
+    width:87%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding:20px;
+    border: 2px solid #0f9b0f;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #0f9b0f; 
+    box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px 	#303030;
+  }
+
+#num0,#num1,#num2,#num3,#num4,#num5,#num6,#num7,#num8,#num9,#mult,#div,#add,#sub,#point,#enter {
+    outline: none;
+    font-family: 'Audiowide';
+    font-size:40px;
+    width:20%;
+    margin:6px;
+    padding:20px;
+    border: 2px solid #0f9b0f;
+    border-radius: 6px;
+    background-color: #000000;
+    color: #0f9b0f; 
+    box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px 	#303030;
+  }

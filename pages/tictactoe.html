@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Kevin's Tic Tac Toe Game</title>
+        <meta name = "description" content="Tic Tac Toe Game">
+        <link rel ="stylesheet" href = "../css/tictactoe.css"/>
+        <!-- CDN - Bootstrap's CSS - Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- CDN - Bootstrap's JavaScript Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <!--CDN - jQuery library - needed by bootstrap and by me -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+         <script src = "../scripts/tictactoe.js"></script>
+    </head>
+    <body>
+        <div class = "container-fluid text-center">
+            <br></br><br></br>
+            <h1 id="title">Tic Tac Toe</h1>
+            <div id="menuDIV">
+              <button id="gameTypeSelector"> Two Player </button>
+              <button id="XOselector"> Player 1: X </button>
+              <button id="start"> Start </button>
+            </div>
+            <div id="board">
+              <div id="buttons">
+                <button id="TLC">E</button>
+                <button id="TE">E</button>
+                <button id="TRC">E</button>
+                <button id="LE">E</button>
+                <button id="C">E</button>
+                <button id="RE">E</button>
+                <button id="BLC">E</button>
+                <button id="BE">E</button>
+                <button id="BRC">E</button>        
+              </div>
+            </div>
+            <div id="bottom">
+              <h2 id = "player1Score">PLAYER 1 : 0</h2>
+              <h2 id = "player2Score">PLAYER 2 : 0</h2>
+              <h2 id = "turnIndicator">Turn : P1</h2>
+              <button id="reset"> Reset </button>
+            </div>
+    </body>
+</html>

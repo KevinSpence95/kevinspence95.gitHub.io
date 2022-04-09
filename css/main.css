@@ -12,7 +12,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
 #navbar {
   position:fixed;
   background-color:black;
@@ -135,10 +134,8 @@ header p {
 }
 
 .btn {
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   border-radius: 2rem;
-  padding-left:2rem;
-  padding-right:2rem;
   color:black;
   background-color:white;
   border: 2px solid black;
@@ -152,6 +149,9 @@ header p {
   background-color:black;
 }
 
+.btn:active {
+  color:green;
+}
 #education_section {
   margin:1rem 0rem 1rem 0rem;
 }
@@ -189,7 +189,6 @@ margin:0rem 0rem 0rem 1rem;
   margin-right:5rem;
 }
 
-
 /*PORTFOLIO SECTION*/
 #projects {
   padding:1rem;
@@ -203,11 +202,9 @@ margin:0rem 0rem 0rem 1rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-    /*grid-template-rows: 1fr 1fr;*/
     grid-gap: 2rem;
     padding:1rem;
     margin:auto;
-    /*background-color: yellow;*/
 }
 
 .project_tile {
@@ -239,9 +236,28 @@ input, textarea {
   border: 1px solid #000000;
   border-radius: 0.5rem;
 }
+input:focus {
+  border-color: cornflowerblue;
+}
 
 #submit_btn {
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2rem;
+  color:black;
+  background-color:white;
+  border: 2px solid black;
+  cursor:pointer;
+  font-weight:bold;
+  letter-spacing:.1rem;
+}
+
+#submit_btn:hover {
+  color:white;
+  background-color:black;
+}
+
+#submit_btn:active {
+ color: green;
 }
 
 #form_section p {
@@ -258,11 +274,6 @@ form {
 form li {
   list-style-type:none;
 }
-
-
-
-
-
 
 /*MEDIA QUERY*/
 @media only screen and (max-width: 815px) {

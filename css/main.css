@@ -294,7 +294,9 @@ form li {
   border-radius:8rem;
 }
 
-
+#submit_btn {
+ padding: 1rem;
+}
   
 #footer_content_container {
   background:black;

@@ -229,19 +229,19 @@ margin:0rem 0rem 0rem 1rem;
   margin-top:2rem;
 }
 
-input, textarea {
+.input, textarea {
   margin:1rem;
   width: 85%;
   padding:.5rem;
   border: 1px solid #000000;
   border-radius: 0.5rem;
 }
-input:focus {
+.input:focus {
   border-color: cornflowerblue;
 }
 
 #submit_btn {
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 4rem 1rem 4rem;
   border-radius: 2rem;
   color:black;
   background-color:white;
@@ -249,6 +249,7 @@ input:focus {
   cursor:pointer;
   font-weight:bold;
   letter-spacing:.1rem;
+  margin: 1rem;
 }
 
 #submit_btn:hover {

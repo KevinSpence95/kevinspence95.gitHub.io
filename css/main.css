@@ -194,6 +194,16 @@ margin:0rem 0rem 0rem 1rem;
   margin-right:5rem;
 }
 
+#capabilities {
+  background:#EEEEEE;
+  padding:1rem;
+  margin-bottom:2rem;
+}
+
+#capabilities p{
+  margin:1rem;
+}
+
 /*PORTFOLIO SECTION*/
 #projects {
   padding:1rem;
@@ -247,6 +257,7 @@ margin:0rem 0rem 0rem 1rem;
 
 #submit_btn {
   padding: 1rem 4rem 1rem 4rem;
+  width: 85%;
   border-radius: 2rem;
   color:black;
   background-color:white;
@@ -283,11 +294,9 @@ form li {
 
 /*MEDIA QUERY*/
 @media only screen and (max-width: 815px) {
-  
   #main_section_container {
   position:static;
   padding: 20px;
-  
 }
   
 #navbar {

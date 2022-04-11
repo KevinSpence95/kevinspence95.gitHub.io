@@ -188,13 +188,32 @@ header p {
   background:#EEEEEE;
 }
 
-#work_experience_section h3 {
- margin:.75rem 3rem .75rem 1rem;
+.jobcontainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin:1rem;
+}
+.companyjobtitlecontainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#intelligratedlogo {
+  height:4rem;
+  width: 4rem;
+  margin-right: 1rem;
 }
 
 #work_experience_section li {
  margin:.75rem 3rem .75rem 3rem;
 }
+
+#work_experience_section ul li p{
+  font-size: .75rem;
+ }
 
 #awards_section h3 {
   margin-left:1rem;

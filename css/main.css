@@ -161,12 +161,27 @@ header p {
   margin:1rem 0rem 1rem 0rem;
 }
 
-#education_section h3{
-  margin:1rem 0rem 0rem 1rem;
+.educationcontainer {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin:1rem;
+}
+.schooldegreecontainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#osulogo {
+  height:4rem;
+  width: 4rem;
+  margin-right: 1rem;
 }
 
-#education_section p{
-margin:0rem 0rem 0rem 1rem;
+#education_section h3{
+  font-weight: bolder;
 }
 
 #work_experience_section {
@@ -211,7 +226,6 @@ margin:0rem 0rem 0rem 1rem;
 
 #capabilities h3{
   margin:.5rem 1rem .5rem 1rem;
-  font-weight: bolder;
 }
 
 #javascript{

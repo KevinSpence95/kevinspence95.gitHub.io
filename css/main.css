@@ -195,13 +195,36 @@ margin:0rem 0rem 0rem 1rem;
 }
 
 #capabilities {
-  background:#EEEEEE;
+  background:#252525;
   padding:1rem;
   margin-bottom:2rem;
+}
+#capabilities h2{
+  color:white;
+  font-weight: bolder;
 }
 
 #capabilities p{
   margin:1rem;
+  color:white;
+}
+
+#capabilities h3{
+  margin:.5rem 1rem .5rem 1rem;
+  font-weight: bolder;
+}
+
+#javascript{
+  color:rgb(251, 255, 0);
+}
+#html{
+  color:rgb(255, 136, 0);
+}
+#css{
+  color:rgb(108, 177, 255);
+}
+#python{
+  color:rgb(21, 167, 21);
 }
 
 /*PORTFOLIO SECTION*/

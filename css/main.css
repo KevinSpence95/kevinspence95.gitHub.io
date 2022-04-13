@@ -219,13 +219,18 @@ header p {
   margin-left:1rem;
 }
 
-#awards_section p {
-  margin:.75rem 4rem .75rem 4rem;
+blockquote p {
+  padding: 1rem;
+  background: white;
+  border-radius: .5rem;
+  margin:.75rem 3rem .75rem 3rem;
+  font-size: .75rem;
 }
 
-.quotesayer {
-  text-align:right;
-  margin-right:5rem;
+figcaption {
+  
+  margin:.75rem 3rem .75rem 3rem;
+  font-size: 1rem;
 }
 
 #capabilities {

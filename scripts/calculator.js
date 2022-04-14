@@ -1,9 +1,10 @@
 //additional functionality to implement: minimize input length, cant press 0 first, add +/- button, if equals is pressed after inputing a number just display that number
+
 $(document).ready(function() 
 {
-  var answer = 0;
-  var entriesSoFar = []; 
-  var currentDisplay = "";
+  let answer = 0;
+  let entriesSoFar = []; 
+  let currentDisplay = "";
   //----------------------------
   function convertToNumber(str)
   {
@@ -19,9 +20,9 @@ $(document).ready(function()
   //---------------------------------------------------------------------
   function getEquationArray()
   {
-    var index = 0;
-    var currentNumber = "";
-    var equationArray = [];
+    let index = 0;
+    let currentNumber = "";
+    let equationArray = [];
    
     while(index<entriesSoFar.length) //get first number entered
       {
@@ -50,7 +51,7 @@ $(document).ready(function()
   }
  //---------------------------------------------------------------------
   function displayAnswer(){ //use only when = is pressed
-    var eqArr = getEquationArray();
+    let eqArr = getEquationArray();
     while(eqArr.length != 1)
       {
       switch(eqArr[1])
@@ -107,7 +108,7 @@ $(document).ready(function()
   }
   //---------------------------------------------------------------------
   function displayNextChar(char){//use when any number or . is pressed
-    var possibleChars = ["1","2","3","4","5","6","7","8","9","0","."]; 
+    let possibleChars = ["1","2","3","4","5","6","7","8","9","0","."]; 
     if(possibleChars.indexOf(char) != -1)
       {
         if(char==="." && currentDisplay.indexOf(".") === -1)
@@ -125,7 +126,7 @@ $(document).ready(function()
     $("#display").html(currentDisplay);
   }
   //---------------------------------------------------------------------
-   //---------------------------------------------------------------------
+
   $("#clear").click(function(){
   clear();
   });

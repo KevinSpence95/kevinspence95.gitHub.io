@@ -355,6 +355,7 @@ form li {
 
 /*MEDIA QUERY*/
 @media only screen and (max-width: 815px) {
+
   #main_section_container {
   position:static;
   padding: 20px;

@@ -9,7 +9,7 @@ $(document).ready(function()
   var resetting = false;
   var minutes;
   var seconds;
-  var sound1 = 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3';
+  var sound1 = '../sounds/simonSound1.mp3';
   main();
   
 //-----------------------------------------------  

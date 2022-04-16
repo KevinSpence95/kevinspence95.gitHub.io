@@ -2,7 +2,8 @@
 <html>
     <head>
         <title> Kevin's Pomodoro Clock </title>
-        <meta name = "description" content="Simon Game">
+        <meta name = "description" content="Pomodoro Clock">
+        <script src = "../scripts/pomodoroclock.js" defer></script>
         <link rel ="stylesheet" href = "../css/pomodoroclock.css"/> 
         <!-- CDN - Bootstrap's CSS - Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -10,20 +11,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- CDN - Bootstrap's JavaScript Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src = "../scripts/pomodoroclock.js" async></script>
     </head>
     <body>
-        <h1 class = "text-center" id="title"> POMODORO CLOCK </h1>
+      <h1 class = "text-center" id="title"> POMODORO CLOCK </h1>
       <div class = "container-fluid text-center" id="main">
         <div id="clockDIV">
-            <h1 id="breakORsession"> SESSION </h1>
-            <h1 id="clock"> 00:00 </h1>
+          <h1 id="breakORsession"> SESSION </h1>
+          <h1 id="clock"> 00:00 </h1>
         </div>
         <div id="sessionLength">
-            <h3> SESSION LENGTH </h3>
-            <button id="SESSminus"> - </button>
-            <h3 id="SESSlength"> 25 </h3>
-            <button id="SESSplus"> + </button>
+          <h3> SESSION LENGTH </h3>
+          <button id="SESSminus"> - </button>
+          <h3 id="SESSlength"> 25 </h3>
+          <button id="SESSplus"> + </button>
         </div>
         </br>
         <div id="breakLength">
@@ -34,7 +34,7 @@
         </div>
         <div >
         </br>
-            <button id="startStop"> START </button>
+          <button id="startStop"> START </button>
         </div>
       </div>
     </body>    

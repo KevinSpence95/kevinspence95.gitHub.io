@@ -129,7 +129,7 @@ $(document).ready(function()
 //---------------------------------
 //GENERAL FUNCTIONS
 
-//called whenever game is turned on, whenever user wins game, or when user errors while strict is true
+  //called whenever game is turned on, whenever user wins game, or when user errors while strict is true
   function reset(){
     var start = false;
     var strict = false;
@@ -137,7 +137,7 @@ $(document).ready(function()
     var currentPattern = [];
   }
 
-// play sound, light up button, nothing else
+  // play sound, light up button, nothing else
   function press(colorNum){
     if(colorNum===0){
       setTimeout(function(){ 
@@ -207,7 +207,7 @@ $(document).ready(function()
         $("#display").html(round); 
         playPattern(round); 
       },1500);
-  //continuously check if user input is correct
+    //continuously check if user input is correct
     let checking = setInterval(function(){ 
       if(howManyPressed>0 && power === true){
         //should always evaluates true when nothing has been clicked

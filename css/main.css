@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 :root {
-  --color1: #EEEEEE;
-  font-size:16px; /*Default value 16px;*/  
+  --mainBG:white;
+  --secondaryBG: black;
+  --sectionBG: #EEEEEE;
+  --sectionBG2: #272727;
+  font-size:16px;  
 }
 
 * {
@@ -13,13 +16,13 @@
 }
 
 html {
-  background-color: black;
+  background-color: var(--secondaryBG);
   height: 100%;
 }
 
 #navbar {
   position:fixed;
-  background-color:black;
+  background-color:var(--secondaryBG);
   width:30vw;
   min-width:325px;
   height:4rem;
@@ -52,7 +55,9 @@ margin-top:.5rem;
   border-bottom-style: solid;
   border-bottom-color: white;
   border-bottom-width: thin;
-
+}
+#navbar li:active {
+  border-bottom-color:cornflowerblue;
 }
 
 #navbar a {
@@ -78,7 +83,7 @@ header p {
 }
 
 #welcome_section {
-  background:black;
+  background:var(--secondaryBG);
   width:30vw;
   min-width:325px;
   height:100vh;
@@ -92,7 +97,7 @@ header p {
 }
 
 #footer_content_container {
-  background:black;
+  background:var(--secondaryBG);
   width:30%;
   min-width:325px;
   position:fixed;
@@ -119,6 +124,10 @@ header p {
   color:white;
 }
 
+#footer_content_container i:active {
+ color:cornflowerblue;
+}
+
 #main_section_container {
   position: absolute;
   top:0px;
@@ -126,11 +135,11 @@ header p {
   padding: 2rem;
   height:auto;
   line-height: 1.5;
-  background:white;
+  background:var(--mainBG);
 }
 
 #about_section {
-  background:#EEEEEE;
+  background:var(--sectionBG);
   padding:1rem;
   margin-bottom:2rem;
 }
@@ -156,7 +165,7 @@ header p {
 }
 
 .btn:active {
-  color:green;
+  color:cornflowerblue;
 }
 #education_section {
   margin:1rem 0rem 1rem 0rem;
@@ -186,7 +195,7 @@ header p {
 }
 
 #work_experience_section {
-  background:#EEEEEE;
+  background:var(--sectionBG);
 }
 
 .jobcontainer {
@@ -235,7 +244,7 @@ figcaption {
 }
 
 #capabilities {
-  background:#272727;
+  background:var(--sectionBG2);
   padding:1rem;
   margin-bottom:2rem;
 }
@@ -301,7 +310,7 @@ figcaption {
 }
 
 #form_section {
-  background-color:#EEEEEE;
+  background-color:var(--sectionBG);
   padding:1rem;
   margin-top:2rem;
 }
@@ -336,7 +345,7 @@ figcaption {
 }
 
 #submit_btn:active {
- color: green;
+ color: cornflowerblue;
 }
 
 #form_section p {

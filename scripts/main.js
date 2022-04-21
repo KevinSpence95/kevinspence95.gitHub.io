@@ -5,4 +5,4 @@ function show_learn_more() {
     } else {
       x.style.display = "none";
     }
-  }
+}

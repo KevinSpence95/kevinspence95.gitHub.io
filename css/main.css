@@ -8,13 +8,11 @@
   --textLight: white;
   --textDark: black;
   --textActive: cornflowerblue;
-  --gradientImage: linear-gradient(45deg, 
-  rgb(255, 225, 0),
-  rgb(255, 132, 0),
-  rgb(232, 0, 0),
-  rgb(255, 11, 255),
-  rgb(167, 45, 255),
-  rgb(55, 0, 255)
+  --gradientImage: linear-gradient(65deg, 
+  rgb(137, 20, 206),
+  rgb(240, 22, 22),
+  #ff8f18,
+  rgb(253, 224, 0)
   );
   font-size:16px;  
 }
@@ -143,7 +141,7 @@ header p {
   /*background:var(--mainBG);*/
   background-image:var(--gradientImage);
   background-size: 400%;
-  animation: bg-animation 40s infinite alternate;
+  animation: bg-animation 25s infinite alternate;
 }
 @keyframes bg-animation {
   0% {

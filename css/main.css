@@ -255,6 +255,11 @@ figcaption {
   margin:.75rem 3rem .75rem 3rem;
   font-size: 1rem;
 }
+#selfemployedlogo {
+  height:4rem;
+  width: 4rem;
+  margin-right: 1rem;
+}
 
 #capabilities {
   background:var(--sectionBG2);

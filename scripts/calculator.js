@@ -1,181 +1,309 @@
-//additional functionality to implement: minimize input length, cant press 0 first, add +/- button, if equals is pressed after inputing a number just display that number
+//cant press zero or an operator first (upon load or after a clear), this only goes for the first operand
+//if two operators are pressed in a row the most recent replaces the previous in the equation array
+//cant have more than one decimal in either operand
 
-$(document).ready(function() 
-{
-  let answer = 0;
-  let entriesSoFar = []; 
-  let currentDisplay = "";
-  //----------------------------
-  function convertToNumber(str)
-  {
-    if(str.indexOf(".") === -1)
-      {
-       return parseInt(str);
-      }
-    else
-      {
-       return parseFloat(str);
-      }
-  }
-  //---------------------------------------------------------------------
-  function getEquationArray()
-  {
-    let index = 0;
-    let currentNumber = "";
-    let equationArray = [];
-   
-    while(index<entriesSoFar.length) //get first number entered
-      {
-        if(entriesSoFar[index] != "x" && entriesSoFar[index] != "÷"  && entriesSoFar[index] != "+"  && entriesSoFar[index] != "-" )
-          {
-            currentNumber = currentNumber.concat(entriesSoFar[index]);
-          }
-        else
-          {
-            equationArray.push(convertToNumber(currentNumber));
-            currentNumber = "";
-            equationArray.push(entriesSoFar[index]);
-          }
-        if(index === entriesSoFar.length -1){ equationArray.push(convertToNumber(currentNumber))}
-          index++;
-      }
-    console.log(equationArray);
-    return equationArray;
-  }
-  //---------------------------------------------------------------------  
-  function clear(){ //use only when clear is pressed
-    answer = 0;
-    entriesSoFar = [];
-    currentDisplay = "";
-    $("#display").html(answer);
-  }
- //---------------------------------------------------------------------
-  function displayAnswer(){ //use only when = is pressed
-    let eqArr = getEquationArray();
-    while(eqArr.length != 1)
-      {
-      switch(eqArr[1])
-      {
-      case "x":
-      answer = eqArr[0]*eqArr[2];
-      break;
-      case "÷":
-      answer = eqArr[0]/eqArr[2];
-           break;
-      case "+":
-      answer = eqArr[0]+eqArr[2];
-           break;
-      case "-":
-      answer = eqArr[0]-eqArr[2]; 
-           break;
-      }
-      eqArr.splice(0,3,answer);
-      console.log(eqArr);
-      }
-    $("#display").html(Math.round(answer * 100000) / 100000);
-    entriesSoFar = [answer]; //need to address case where addition symbols and number can be pressed
-  }
-  //---------------------------------------------------------------------
-  function displaySymbol(sym){ // use when x ÷ + or - is pressed
+//pressing sign (-) .... unshift a - onto the current operand and shift it back off the current operand if pressed again
+//if (-) is pressed anytime before OR directly after an operator is pressed, modify first operand
+//if (-) is pressed after an operator and a second operand has been declared (1-9 or .) (NOT 0)
+//if equals is pressed after inputing a number just display that number
+
+//hitting = solves the equation array, or evaluates a single operand as itself, or recalls the last result if = pressed repeatedly
+//hitting any operator after an operator and 2 operands have been input into the equation array should evaluate the expression and set it to the value of the first operand
+
+//clear will empty the equation display and (optionally) set the display to 0
+
+//get rid of any unneccessary 0's in both operands (e.g 056 is just 56)
+
+let equationArr = [];
+let firstOperand = false;
+let firstOperandArr = [];
+let secondOperand = false;
+let secondOperandArr = [];
+let operatorPresent = false;
+let savedOP;
+let lastEqualsSolve = "0";
+let calcDisplay = document.querySelector(".calcDisplay p");
+
+const zeroThruNine = ["0","1","2","3","4","5","6","7","8","9"];
+const oneThruNine = ["1","2","3","4","5","6","7","8","9"];
+const operators = ['/','*','-','+'];
+
+$(".seven").click(function(){
+    processInput('7');
+});
+$(".eight").click(function(){
+    processInput('8');
+});
+$(".nine").click(function(){
+    processInput('9');
+});
+$(".divide").click(function(){
+    processInput('/');
+});
+$(".four").click(function(){
+    processInput('4');
+});
+$(".five").click(function(){
+    processInput('5');
+});
+$(".six").click(function(){
+    processInput('6');
+});
+$(".multiply").click(function(){
+    processInput('*');
+});
+$(".one").click(function(){
+    processInput('1');
+});
+$(".two").click(function(){
+    processInput('2');
+});
+$(".three").click(function(){
+    processInput('3');
+});
+$(".subtract").click(function(){
+    processInput('-');
+});
+$(".zero").click(function(){
+    processInput('0');
+});
+$(".decimal").click(function(){
+    processInput('.');
+});
+$(".sign").click(function(){
+    processInput('$');
+});
+$(".add").click(function(){
+    processInput('+');
+});
+$(".equals").click(function(){
+    displayResult(false);
+});
+$(".clear").click(function(){
+    clear(true);
+});
+
+function processInput(char) {
+    //*** Limiting Input to 10 Digits for each operand***/
+    if (firstOperand && !secondOperand) {
+        if (firstOperandArr.length>9 && !operators.includes(char) && !operatorPresent) {return}
+    }
+    else if (firstOperand && secondOperand) {
+        if (secondOperandArr.length>9 && !operators.includes(char)) {return}
+    }
+    //************************* */
     
-    if(entriesSoFar.length != 0) 
-    {
-      if(entriesSoFar[entriesSoFar.length-1] != "." && entriesSoFar[entriesSoFar.length-1] != "x" && entriesSoFar[entriesSoFar.length-1] != "+" && entriesSoFar[entriesSoFar.length-1] != "-" && entriesSoFar[entriesSoFar.length-1] != "÷")
-        {
-      currentDisplay = "";
-    if(sym==="x")
-      {
-        $("#display").html("x");
-        entriesSoFar.push("x");
-      }
-    else if(sym==="÷")
-      {
-        $("#display").html("÷");
-        entriesSoFar.push("÷");
-      }
-    else if(sym==="+")
-      {
-        $("#display").html("+");
-        entriesSoFar.push("+");
-      }
-    else if(sym==="-")
-      {
-        $("#display").html("-");
-        entriesSoFar.push("-");
-      }
+    if (!firstOperand && !secondOperand) { //initial condition where niether operand exists (although 0 is displayed by default)
+        if (char === '.') { //if "." is pressed, push "0" then "." to the equationArr and firstOperandArr, display firstOperandArr
+            equationArr.push('0');
+            equationArr.push('.');
+            firstOperand = true;
+            firstOperandArr = [...equationArr];
+            display(firstOperandArr.join(""));
+        }
+        else if (oneThruNine.includes(char)) { //if zero is pressed do nothing since it is already displayed initially, if "1-9" is pressed, push the value to the equationArr and firstOperandArr, display firstOperandArr
+            equationArr.push(char)
+            firstOperand = true;
+            firstOperandArr = [...equationArr];
+            display(firstOperandArr.join(""));
+        }
+        else if (char === '$') {
+            if (lastEqualsSolve !== '0' && parseFloat(lastEqualsSolve) > 0) {
+                lastEqualsSolve = '-'.concat(lastEqualsSolve);
+                firstOperand = true;
+                firstOperandArr = lastEqualsSolve.split('');
+                equationArr = [...firstOperandArr]
+                display(firstOperandArr.join(''));
+            }
+            else if (lastEqualsSolve !== '0' && parseFloat(lastEqualsSolve) < 0) {
+                lastEqualsSolve = lastEqualsSolve.slice(1);
+                firstOperand = true;
+                firstOperandArr = lastEqualsSolve.split('');
+                equationArr = [...firstOperandArr]
+                display(firstOperandArr.join(''));
+            }
+        }
+
+        if (operators.includes(char) && calcDisplay.childNodes[0].nodeValue !== "0") {  //allows us to use the previous result from hitting the = button if the next key pressed is an operator
+            equationArr = lastEqualsSolve.split("");
+            firstOperandArr = [...equationArr];
+            firstOperand = true;
+            equationArr.push(char);
+            operatorPresent = true; 
+        }      
+    } 
+
+    else if (firstOperand && !secondOperand) { //once the firstOperator exists (a "." or a "1-9" has been pressed, or if the firstOperand has been set to the lastResult, this condition will fire on the next processInput
+        if (zeroThruNine.includes(char)) {
+            if (operatorPresent) { 
+                equationArr.push(char);
+                secondOperand = true;
+                secondOperandArr.push(char);
+                display(secondOperandArr.join(""));
+            }
+            else {
+                equationArr.push(char);    
+                firstOperandArr = [...equationArr];
+            }
+        }
+        if (char === '$') {
+            if (equationArr[0] !== '-') {
+                equationArr.unshift("-");
+                firstOperandArr.unshift("-");
+                display(firstOperandArr.join(""));
+            }
+            else if (equationArr[0] === '-') {
+                equationArr.shift();
+                firstOperandArr.shift();
+                display(firstOperandArr.join(""));
+            }
+        }
+        if (char === '.') {
+            if (operatorPresent) {
+                equationArr.push('0');
+                equationArr.push('.');
+                secondOperandArr = [...equationArr].slice(-2);
+                secondOperand = true;
+                display(secondOperandArr.join(""));
+            }
+            else if (!firstOperandArr.includes('.') && operatorPresent === false) {
+                equationArr.push(char);
+                firstOperandArr = [...equationArr];
+            }
+        }
+        if (operators.includes(char)) { 
+            if (operators.includes(equationArr[equationArr.length-1])) { 
+                equationArr[equationArr.length-1] = char;  
+            }
+            else { 
+                equationArr.push(char);
+            }
+            firstOperandArr = equationArr.slice(0,-1);
+            operatorPresent = true;
+        }
+
+        if (operators.includes(equationArr[equationArr.length-2])) {
+            if(!firstOperandArr.includes('-')) {
+            secondOperand = true;
+            secondOperandArr = equationArr.slice(-1);
+            display(secondOperandArr.join(""));
+            }
+        }
+        if (secondOperand === false) {
+            display(firstOperandArr.join(""));
         }
     }
-  }
-  //---------------------------------------------------------------------
-  function displayNextChar(char){//use when any number or . is pressed
-    let possibleChars = ["1","2","3","4","5","6","7","8","9","0","."]; 
-    if(possibleChars.indexOf(char) != -1)
-      {
-        if(char==="." && currentDisplay.indexOf(".") === -1)
-        {
-          currentDisplay = currentDisplay.concat(char)
-          entriesSoFar.push(".");
-        } 
-        else if(char==="." && currentDisplay.indexOf(".") != -1){}
-        else
-          {
-            currentDisplay = currentDisplay.concat(char)
-            entriesSoFar.push(char);
-          }
-      }
-    $("#display").html(currentDisplay);
-  }
-  //---------------------------------------------------------------------
 
-  $("#clear").click(function(){
-  clear();
-  });
-  $("#num1").click(function(){
-  displayNextChar("1");
-  });
-   $("#num2").click(function(){
-  displayNextChar("2");
-  });
-   $("#num3").click(function(){
-  displayNextChar("3");
-  });
-   $("#num4").click(function(){
-  displayNextChar("4");
-  });
-   $("#num5").click(function(){
-  displayNextChar("5");
-  });
-   $("#num6").click(function(){
-  displayNextChar("6");
-  });
-   $("#num7").click(function(){
-  displayNextChar("7");
-  });
-   $("#num8").click(function(){
-  displayNextChar("8");
-  });
-   $("#num9").click(function(){
-  displayNextChar("9");
-  });
-   $("#num0").click(function(){
-  displayNextChar("0");
-  });
-   $("#point").click(function(){
-  displayNextChar(".");
-  });
-  $("#mult").click(function(){
-  displaySymbol("x");
-  });
-  $("#div").click(function(){
-  displaySymbol("÷");
-  });
-  $("#add").click(function(){
-  displaySymbol("+");
-  });
-  $("#sub").click(function(){
-  displaySymbol("-");
-  });
-  $("#enter").click(function(){
-  displayAnswer();
-  });
-});
+    else if (firstOperand && secondOperand) {
+        if (zeroThruNine.includes(char)) {
+            if ((secondOperandArr[0] === '0' && secondOperandArr.length === 1) || (secondOperandArr[0] === '-' && secondOperandArr[1] === '0' && secondOperandArr.length === 2)) {
+                equationArr[equationArr.length-1] = char;
+                secondOperandArr[secondOperandArr.length-1] = char;
+            }
+            else {
+                equationArr.push(char);
+                secondOperandArr.push(char);
+            }
+            display(secondOperandArr.join(""));
+        }
+        if (char === '$') { 
+            if (secondOperandArr[0] !== '-') { //insert '-' into equation array after operator
+                let indexOfOperator = firstOperandArr.length;
+                equationArr = equationArr.slice(0,indexOfOperator+1).concat('-').concat(equationArr.slice(indexOfOperator+1));
+                secondOperandArr.unshift("-");
+                display(secondOperandArr.join(""));
+            }
+            else if (secondOperandArr[0] === '-') { //remove the '-' from the equationArr after operator
+                let indexOfOp = firstOperandArr.length;
+                equationArr = equationArr.slice(0,indexOfOp+1).concat(equationArr.slice(indexOfOp+2))
+                secondOperandArr.shift();
+                display(secondOperandArr.join(""));
+            }
+        }
+        if (char === '.') {    
+          if (!secondOperandArr.includes(".")) {
+            equationArr.push(char);
+            secondOperandArr.push(char);
+            display(secondOperandArr.join(""));
+          }
+        }
+        if (operators.includes(char)) {
+            equationArr.push(char);
+            displayResult(true); 
+        }
+    }
+    //statusUpdate();  
+}
+
+function displayResult(newOp) {
+    let result;
+    if (newOp) {
+        let nextOp = equationArr.pop();
+        if (firstOperand && secondOperand) {
+            if (equationArr[firstOperandArr.length] === '-') {
+                result = (convertToNumber(firstOperandArr) - convertToNumber(secondOperandArr)).toString();
+                
+            }
+            else {result = eval(equationArr.join("")).toString().substring(0,12)} //*** maybe need substring here to limit digits in result */
+        }
+        if (!secondOperand) {result = firstOperandArr.join("")}
+        display(result);
+        clear(false);
+        firstOperandArr = result.split("");
+        firstOperand = true;
+        equationArr = result.split("");
+        equationArr.push(nextOp);
+        operatorPresent = true;
+    }
+    else {  
+        if (firstOperand && secondOperand) {
+            if (equationArr[firstOperandArr.length] === '-') {
+                result = (convertToNumber(firstOperandArr) - convertToNumber(secondOperandArr)).toString();
+            }
+            else {result = eval(equationArr.join("")).toString().substring(0,12)} //*** maybe need substring here to limit digits in result */
+        }  
+        if (firstOperand && !secondOperand) {result = firstOperandArr.join("")}
+        if (!firstOperand && !secondOperand) {result = lastEqualsSolve}
+        lastEqualsSolve = result;
+        display(result);
+        clear(false);
+    }
+    //statusUpdate();
+}
+
+function clear(displayZero) {
+    equationArr = [];
+    firstOperand = false;
+    firstOperandArr = [];
+    secondOperand = false;
+    secondOperandArr = [];
+    operatorPresent = false;
+    if (displayZero) {
+        display('0');
+        lastEqualsSolve = '0';
+    }
+}
+
+function convertToNumber(input) {
+    if(typeof input === "number") {return input}
+    if(typeof input === "string") {return input.indexOf(".") === -1 ? parseInt(input) : parseFloat(input)}
+    if(typeof input === "object" && input.length !== "undefined"){return input.indexOf(".") === -1 ? parseInt(input.join("")) : parseFloat(input.join(""))}
+}
+
+function display(str) { 
+    calcDisplay.textContent = str.substring(0,12); //.substring will limit the outputs only (to 12 digits) since the inputs can only be 10 digits as defined below
+}
+
+// function statusUpdate() {
+//     alert(
+//     `        equationArr:  [${equationArr}]
+
+//      firstOperand exists:  ${firstOperand}
+//          firstOperandArr:  [${firstOperandArr}]
+
+//     secondOperand exists:  ${secondOperand}
+//         secondOperandArr:  [${secondOperandArr}]
+
+//         operator Present?  ${operatorPresent}
+//     `);
+// }

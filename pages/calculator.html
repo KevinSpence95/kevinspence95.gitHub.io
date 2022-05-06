@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Kevin's Calculator </title>
-        <meta name = "description" content="Javascript Calculator">
-        <link rel ="stylesheet" href = "../css/calculator.css"/>
-        <!-- CDN - Bootstrap's CSS - Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <!-- CDN - Bootstrap's JavaScript Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-         <!--CDN - jQuery library - needed by bootstrap and by me -->
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-        <script src="../scripts/calculator.js" async></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Calculator</title>
+         <meta name = "description" content="Javascript Calculator">
+        <link rel="stylesheet" href="../css/calculator.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script> 
+        <script type="module" src="../scripts/calculator.js" defer></script>
+
     </head>
     <body>
-        <div class = "container-fluid text-center">
-            <br></br><br></br>
-          <h1 id="title"> Javascript Calculator </h1>
-            <div id="calculator">
-              <h2 class="text-right" id="display">0</h2>
-              <div id="buttons">
-                <button id="clear">C L E A R</button>
-                <button id="num7">7</button>
-                <button id="num8">8</button>
-                <button id="num9">9</button>
-                <button id="mult">x</button>
-                <button id="num4">4</button>
-                <button id="num5">5</button>
-                <button id="num6">6</button>
-                <button id="div">÷</button>
-                <button id="num1">1</button>
-                <button id="num2">2</button>
-                <button id="num3">3</button>
-                <button id="add">+</button>
-                <button id="num0">0</button>
-                <button id="point">.</button>
-                <button id="enter">=</button>
-                <button id="sub">-</button>
-              </div>
-            </div>
-          </div>
+      <div class ="flexContainer">
+        <div class = "gridContainer">
+
+            <div class = "calcDisplay"><p id="disp">0</p></div>
+
+            <div class = "btn seven"><p>7</p></div>
+            <div class = "btn eight"><p>8</p></div>
+            <div class = "btn nine"><p>9</p></div>
+            <div class = "btn operator divide"><p>/</p></div>
+
+            <div class = "btn four"><p>4</p></div>
+            <div class = "btn five"><p>5</p></div>
+            <div class = "btn six"><p>6</p></div>
+            <div class = "btn operator multiply"><p>x</p></div>
+
+            <div class = "btn one"><p>1</p></div>
+            <div class = "btn two"><p>2</p></div>
+            <div class = "btn three"><p>3</p></div>
+            <div class = "btn operator subtract"><p>-</p></div>
+
+            <div class = "btn zero"><p>0</p></div>
+            <div class = "btn decimal"><p>.</p></div>
+            <div class = "btn sign"><p>(-)</p></div>
+            <div class = "btn operator add"><p>+</p></div>
+
+            <div class = "btn equals"><p>=</p></div>
+            <div class = "btn clear"><p>C</p></div>
+
+        </div>
+      </div>
     </body>
 </html>

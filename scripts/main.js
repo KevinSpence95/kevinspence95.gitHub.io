@@ -1,8 +1,11 @@
 function show_learn_more() {
-    let x = document.getElementById("learn_more");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    let section = document.getElementById("learn_more");
+    let learnMoreLess = document.querySelector(".learnlessORlearnmore");
+    if (section.style.display === "none") {
+      section.style.display = "block";
+      learnMoreLess.textContent = "Learn Less";
     } else {
-      x.style.display = "none";
+      section.style.display = "none";
+      learnMoreLess.textContent = "Learn More";
     }
 }

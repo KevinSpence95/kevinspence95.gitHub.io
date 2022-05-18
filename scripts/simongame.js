@@ -11,15 +11,7 @@ $(document).ready(function()
   let round = 1;
   let startNewGame = true;
   const sound1 = `../sounds/simonSound1.mp3`;
-  const sound2 = `../sounds/simonSound2.mp3`;
-  const sound3 = `../sounds/simonSound3.mp3`;
-  const sound4 = `../sounds/simonSound4.mp3`;
-/*
-  const sound1 = 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3';
-  const sound2 = 'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3';
-  const sound3 = 'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3';
-  const sound4 = 'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3';
-*/
+  
   //----------------------------------------
   //GAME STATE BUTTONS
   $("#on-off").click(function(){
@@ -67,24 +59,25 @@ $(document).ready(function()
   //----------------------------------------
   //SOUND GENERATOR FUNCTION
   function playSound(val) {
-    let audioElement = document.createElement('audio');           
-    audioElement.setAttribute('autoplay', 'autoplay');
+    let audioElement;
     switch(val) {
     case "blue":
-      audioElement.setAttribute('src', sound1);
+      audioElement = document.querySelector('#sound1');
       break;
     case "red":
-      audioElement.setAttribute('src', sound2);
+      audioElement = document.querySelector('#sound2');
       break;
     case "green":
-      audioElement.setAttribute('src', sound3);
+      audioElement = document.querySelector('#sound3');;
       break;
     case "yellow":
-      audioElement.setAttribute('src', sound4);
+      audioElement = document.querySelector('#sound4');
       break;
     default:
       alert("Something Went Wrong!");
   }
+  audioElement.pause();
+  audioElement.currentTime = 0;
   audioElement.play();
   }
 

@@ -71,6 +71,8 @@ $(document).ready(function()
     default:
       alert("Something Went Wrong!");
   }
+  audioElement.pause();
+  audioElement.currentTime = 0;
   audioElement.play();
 }
   

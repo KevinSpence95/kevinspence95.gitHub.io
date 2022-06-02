@@ -34,7 +34,7 @@ html {
 .navbar {
   background-color:var(--secondaryBG);
   width:35%;
-  min-width:350px;
+  min-width:400px;
   height:4rem;
   position:fixed;
   top: 0px;
@@ -104,7 +104,7 @@ header p {
 #welcome_section {
   background:var(--secondaryBG);
   width:35%;
-  min-width:350px;
+  min-width:400px;
   height:100vh;
   position:fixed;
   top: 4rem;
@@ -118,7 +118,7 @@ header p {
 .navbar2 {
   background-color:var(--secondaryBG);
   width:35%;
-  min-width:350px;
+  min-width:400px;
   height:4rem;
   position:fixed;
   top: 0px;
@@ -157,7 +157,7 @@ margin-top:.5rem;
 .footer_content_container {
   background:var(--secondaryBG);
   width:35%;
-  min-width:350px;
+  min-width:400px;
   position:fixed;
   bottom:0px;
   left:0px;
@@ -185,11 +185,10 @@ margin-top:.5rem;
 #main_section_container {
   position: absolute;
   top:0px;
-  left:clamp(350px, 35%, 35%);
+  left:clamp(400px, 35%, 35%);
   padding: 2rem;
   height:auto;
   line-height: 1.5;
-  /*background:var(--mainBG);*/
   background-image:var(--gradientImage);
   background-size: 400%;
   animation: bg-animation 25s infinite alternate;

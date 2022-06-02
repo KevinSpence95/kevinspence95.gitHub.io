@@ -29,22 +29,23 @@ html {
   height: 100%;
 }
 
-#navbar {
+.navbar {
   position:fixed;
   background-color:var(--secondaryBG);
-  width:30vw;
+  width:35vw;
   min-width:325px;
   height:4rem;
   position:fixed;
   top: 0px;
   left: 0px;
   z-index: 9999;
+  display:none;
 }
 .nav-link {
   text-decoration: none;
   color:var(--textLight);
 }
-#navbar ul{
+.navbar ul{
   display:flex;
   flex-direction:row;
   justify-content:space-evenly;
@@ -53,27 +54,27 @@ html {
   padding:1rem;
   flex-wrap:wrap;
 }
-#navbar li {
+.navbar li {
 margin-top:.5rem;
 }
-#navbar li:hover {
+.navbar li:hover {
   border-bottom-style: solid;
   border-bottom-color: var(--textLight);
   border-bottom-width: thin;
 }
-#navbar li:active {
+.navbar li:active {
   border-bottom-color:var(--textActive);
 }
-#navbar a {
+.navbar a {
   font-size:1rem;
 }
-#navbar a:active {
+.navbar a:active {
   color:var(--textActive);
 }
 #profile_pic {
   width:200px;
   border-radius:8rem;
-  margin-top:.25rem;
+  margin-top:2rem;
   margin-bottom:.5rem;
 }
 header h1 {
@@ -101,7 +102,7 @@ header p {
  }
 #welcome_section {
   background:var(--secondaryBG);
-  width:30vw;
+  width:35vw;
   min-width:325px;
   height:100vh;
   position:fixed;
@@ -115,7 +116,7 @@ header p {
 
 .footer_content_container {
   background:var(--secondaryBG);
-  width:30%;
+  width:35%;
   min-width:325px;
   position:fixed;
   bottom:0px;
@@ -144,7 +145,7 @@ header p {
 #main_section_container {
   position: absolute;
   top:0px;
-  left:clamp(325px, 30%, 30%);;
+  left:clamp(325px, 35%, 35%);
   padding: 2rem;
   height:auto;
   line-height: 1.5;
@@ -291,11 +292,10 @@ figcaption {
 }
 
 /*PORTFOLIO SECTION*/
-#projects {
-  padding:1rem;
-}
-#projects h2{
-  margin-bottom:1rem;
+
+#portfolio_section h2{
+  margin: 1rem;
+  text-decoration: underline;
 }
 .grid_container {
     width: 100%;
@@ -375,14 +375,14 @@ form li {
 
 #main_section_container {
   position:static;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .topicons {
   display: flex;
  }
   
-#navbar {
+.navbar {
   position:sticky;
   width:100%;
   height:4rem;
@@ -403,7 +403,7 @@ form li {
 #profile_pic {
   width:140px;
   border-radius:8rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
   
 .footer_content_container {

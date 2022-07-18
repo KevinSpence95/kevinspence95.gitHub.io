@@ -323,10 +323,10 @@ figcaption {
 #htmlcss{
   color:rgb(255, 136, 0);
 }
-#css{
+#other{
   color:rgb(108, 177, 255);
 }
-#python{
+#applications{
   color:rgb(21, 167, 21);
 }
 
@@ -348,7 +348,7 @@ figcaption {
   border-radius: 1.25rem;
 }
 .project_tile:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); 
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .project_thumb {
@@ -358,7 +358,7 @@ figcaption {
 }
 
 .project_thumb:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 

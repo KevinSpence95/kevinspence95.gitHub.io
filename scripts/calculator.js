@@ -20,7 +20,6 @@ let firstOperandArr = [];
 let secondOperand = false;
 let secondOperandArr = [];
 let operatorPresent = false;
-let savedOP;
 let lastEqualsSolve = "0";
 let calcDisplay = document.querySelector(".calcDisplay p");
 

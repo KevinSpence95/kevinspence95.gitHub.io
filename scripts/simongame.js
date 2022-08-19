@@ -1,6 +1,6 @@
 $(document).ready(function() 
 {  
-  //GLOBAL VARIABLES
+
   let power = false; //false=off,true=on
   let start = false;
   let strict = false;

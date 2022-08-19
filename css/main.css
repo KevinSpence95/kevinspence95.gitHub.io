@@ -221,6 +221,7 @@ margin-top:.5rem;
   font-weight:bold;
   letter-spacing:.1rem;
   margin-left:1rem;
+  transition: all 450ms;
 }
 .btn:hover {
   color:white;
@@ -344,21 +345,34 @@ figcaption {
     padding:1rem;
     margin:auto;
 }
-.project_tile {
+
+/* .project_tile {
   border-radius: 1.25rem;
-}
-.project_tile:hover {
-  transform: scale(1.05); 
+} */
+/* .project_tile:hover {
+  transform: scale(1.01); 
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
-.project_thumb {
-    width: 100%;
-    height: auto; 
-    border-radius: 1.25rem;;
+} */
+
+.project_tile a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  background-color: #c9ff18;
+
+  
 }
 
+.project_thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.25rem;
+    transition: all 450ms;
+}
 .project_thumb:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 
 
@@ -388,6 +402,7 @@ figcaption {
   font-weight:bold;
   letter-spacing:.1rem;
   margin: 1rem;
+  transition: all 450ms;
 }
 #submit_btn:hover {
   color:white;

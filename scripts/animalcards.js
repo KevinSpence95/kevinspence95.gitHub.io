@@ -1,8 +1,25 @@
-async function fetchData(){
+async function fetchData() {
+    try {
     const numAnimals = document.getElementById("input").value
     const response = await fetch(`https://zoo-animal-api.herokuapp.com/animals/rand/${numAnimals}`)
+    if (!response.ok) {
+        throw new Error('Failed to retrieve images.')
+    }
     const data = await response.json()
     createAnimalCards(data)
+    }
+    catch (err) {
+        displayError(err)
+        console.log(err)
+    }
+}
+
+const displayError = (err) => {
+    const container = document.querySelector("#gridContainer")
+    container.innerHTML = ``
+    const error = document.createElement('h3')
+    container.append(error)
+    error.textContent = err
 }
 
 function createAnimalCards(data) {

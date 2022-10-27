@@ -66,7 +66,7 @@ function generateHex() {
     }
     const theStuff = randoHex.join("")
     return theStuff
-  }
+}
 
 
 

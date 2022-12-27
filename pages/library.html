@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <script src='/scripts/library.js' defer></script>
+    <link rel="stylesheet" href="/css/library.css">
+</head>
+
+<body class="bodyFlex">
+    <div style="position: relative;">
+      <h1 class="siteTitle">The Book Cave</h1>
+    </div>
+    <button type="button" class = 'addBookBtn' onclick="openModal()">+ 📚</button>
+
+    <div class="bookshelf grid_container">
+       
+    </div>
+
+    <!-- The Modal -->
+  <div id="myModal" class="modal hidden">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&timesb;</span>
+      <form>
+        <label for="title">Book Title:</label><br>
+        <input type="text" id="title" name="name" required autocomplete="off"><br><br>
+
+        <label for="author">Book Author:</label><br>
+        <input type="text" id="author" name="author" required autocomplete="off"><br><br>
+
+        <label for="pages">Pages:</label><br>
+        <input type="number" id="pages" name="pages" min="1" max="1000" autocomplete="off"><br><br>
+
+        <label for="read">Finished Reading:</label>
+        <input type="checkbox" id="read" name="read" autocomplete="off"><br><br>
+
+        <input type="submit" value="Add to Library" onclick=""></input>
+      </form> 
+    </div>
+  </div>
+
+</body>
+
+</html>

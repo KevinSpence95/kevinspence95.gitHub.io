@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* make the form elements inherit font properties the way everything else does*/
+    * {
+      margin: 0;
+      padding: 0;
+
+      font: inherit; /* gets rid of all default font sizes and weights, leaving it up to us to style elements with css instead of using heading levels and elements to do it */
+    }
+
+    html {
+      color-scheme: dark light; /*sets default dark mode to follow user preference*/
+      background: url('../images/mushroomcavebackground.jpg') var(--color3) no-repeat center center fixed; 
+      -webkit-background-size: cover; 
+      -moz-background-size: cover; 
+      -o-background-size: cover; 
+      background-size: cover; 
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    /* make these items responsive */
+    img, picture, svg, video {
+      display: block;
+      max-width: 100%;
+    }
+
+/*-----------------*/
+
+
+    :root {
+      font-size: 16px;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      --color1: #FEB52E;
+      --color2: #6BFFDE;
+      --color3: #132C2F;
+    }
+
+    .bodyFlex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .siteTitle {
+      font-size: 4rem;
+      letter-spacing: 4px;
+      color: var(--color3);
+      margin-top: 30%;
+    }
+    .siteTitle::before {
+      content: "The Book Cave";
+      font-size: 4rem;
+      transform: scale(.95);
+      letter-spacing: 4px;
+      color: var(--color1);
+      position: absolute;
+    }
+
+    .addBookBtn {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background-color: var(--color1);
+      border: 4px var(--color2) solid;
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: var(--color3);
+      z-index: 1;
+      transition: transform 450ms;
+    }
+
+    .addBookBtn:hover {
+      transform: scale(1.03);
+    }
+    .addBookBtn:focus {
+      transform: scale(.97);
+    }
+    /* Modal styles */
+    .hidden {
+        display: none;  /* Hidden by default */
+    }
+
+    .modal {
+      /* display: none; Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .grid_container {
+        width: 100%;
+        display: grid;
+        /* background-color: rgba(222, 184, 135,.7); */
+        grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+        grid-auto-rows: 200px;
+        grid-gap: 2rem;
+        padding:1rem;
+        margin:auto;
+    }   
+    .bookshelf {
+      margin-top: 25%;
+    }
+
+    .book {
+        background-color: aquamarine;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding:.5rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+
+    .book__title {
+      margin:0;
+      font-size: 1.125rem;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: .25rem;
+    }
+
+    .book__author {
+      align-self: center;
+      position: relative;
+      font-size: .875rem;
+      margin-top: auto;
+      margin-bottom: 1rem;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: .25rem;
+    }
+    /* .book__author::before {
+      content: '-';
+      position: absolute;
+      left: -10px;
+      bottom: 10%;
+    } */
+
+    .book > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      /* margin-top: auto; */
+    }
+
+    .book__read {
+      
+    }
+
+    .book__pages {
+      font-size: .875rem;
+      background-color: rgba(255, 255, 255, 0.75);
+      padding: .25rem;
+    }
+
+    .book__close {
+      cursor: pointer;
+    }

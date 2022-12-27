@@ -388,6 +388,7 @@ figcaption {
   border: 1px solid #000000;
   border-radius: 0.5rem;
 }
+
 .input:focus {
   border-color: var(--textActive);
 }

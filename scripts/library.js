@@ -36,6 +36,9 @@ form.addEventListener('submit', (e) => {
     closeModal()
 })
 
+
+
+
 window.addEventListener('click', (e) => {
     if(e.target === modal) {
         closeModal()
@@ -43,6 +46,16 @@ window.addEventListener('click', (e) => {
 })
 
 closeModalBtn.addEventListener('click', () => {
+    closeModal()
+})
+
+window.addEventListener('touchend', (e) => {
+    if(e.target === modal) {
+        closeModal()
+    }
+})
+
+closeModalBtn.addEventListener('touchend', () => {
     closeModal()
 })
 

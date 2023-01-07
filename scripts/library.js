@@ -158,11 +158,36 @@ function generateHex() {
 //Display the global library array via the displayBooks() function
 
 let myLibrary = loadLibrary()
-
-addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
-addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
-
 displayBooks()
 
+
+
+
+function addSomeBooks() { 
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+    addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
+    addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
+}
 
 

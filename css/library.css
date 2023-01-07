@@ -35,8 +35,7 @@
     input {
       font-family: inherit;
       font-size: 100%;
-      padding: .25rem;
-      border: none;
+      color: black;
     }
 
 /*-----------------*/
@@ -47,7 +46,8 @@
       font-family: 'Yanone Kaffeesatz', sans-serif;
       --color1: #FEB52E;
       --color2: #6BFFDE;
-      --color3: #132C2F;
+      --color3: #0b1a1c;
+      /* --color3: #132C2F; */
     }
 
     .bodyFlex {
@@ -57,16 +57,15 @@
     }
 
     .siteTitle {
-      font-size: 5rem;
+      font-size: 4rem;
       letter-spacing: 4px;
       color: var(--color3);
-      /* margin-top: 30%; */
       position: fixed;
-      top:2rem;
+      top:10rem;
     }
     .siteTitle::before {
       content: "The Book Cave";
-      font-size: 5rem;
+      font-size: 4rem;
       transform: scale(.95);
       letter-spacing: 4px;
       color: var(--color1);
@@ -140,7 +139,7 @@
       }
     }
 
-    input:focus{
+    input[type='text']:focus,input[type='number']:focus{
       outline: var(--color1) 2px solid;
     }
 
@@ -152,12 +151,25 @@
     input[type='text'] {
       width: 75%;
       background-color: var(--color2);
+      padding: .25rem;
+      border:none;
     }
     input[type='number'] {
       width: 15%;
       background-color: var(--color2);
+      padding: .25rem;
+      border:none;
     }
 
+    input[type='checkbox'] {
+      -ms-transform: scale(1.25); 
+      -moz-transform: scale(1.25); 
+      -webkit-transform: scale(1.25); 
+      -o-transform: scale(1.25);
+      transform: scale(1.25);
+      background-color: var(--color2);
+      accent-color: var(--color3);
+    }
     form input[type='checkbox'] {
       -ms-transform: scale(2.5); /* IE */
       -moz-transform: scale(2.5); /* FF */
@@ -166,33 +178,29 @@
       transform: scale(2.5);
       background-color: var(--color2);
       margin-left: .5rem;
-      outline:none;
       accent-color: var(--color3);
     }
  
-    input[type='checkbox'] {
-      -ms-transform: scale(1.25); 
-      -moz-transform: scale(1.25); 
-      -webkit-transform: scale(1.25); 
-      -o-transform: scale(1.25);
-      transform: scale(1.25);
-      background-color: var(--color2);
-      margin-left: .5rem;
-      outline:none;
-      accent-color: var(--color3);
-    }
-
+/* 
     input[type='submit'] {
       padding:1rem;
       background-color: var(--color1);
-      /* border-radius: 50%; */
       border-color: var(--color3);
-      /* border: solid var(--color2) 4px; */
       position: absolute;
       right: 1rem;
       bottom: 1rem;
-    }
+      cursor: pointer;
+    } */
 
+    button[type='submit'] {
+      padding:1rem;
+      background-color: var(--color1);
+      border-color: var(--color3);
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      cursor: pointer;
+    }
     /* The Close Button */
     .close {
       color: #aaa;
@@ -229,7 +237,7 @@
     }
 
     .bookshelf {
-      margin-top: 20%;
+      margin-top: 24rem;
     }
 
     .book {

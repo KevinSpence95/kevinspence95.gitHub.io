@@ -27,7 +27,7 @@ let closeModalBtn = document.querySelector('.close')
 
 //on form submit, prevent default behavior and grab the values from the inputs, add a book with the user input to myLibrary 
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); 
+    // e.preventDefault(); 
     let inputValues = [...inputs].map((input)=> {
         return input.type === 'checkbox' ? input.checked : input.value
     })

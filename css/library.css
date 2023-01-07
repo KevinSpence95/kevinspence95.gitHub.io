@@ -180,6 +180,10 @@
       margin-left: .5rem;
       accent-color: var(--color3);
     }
+
+    form input[type='checkbox']:not(:checked) {
+      background-color: pink;
+    }
  
 /* 
     input[type='submit'] {

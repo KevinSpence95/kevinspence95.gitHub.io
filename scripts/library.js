@@ -76,7 +76,7 @@ function saveLibrary() {
 
 function loadLibrary() {
     console.log(`retrieving data from localStorage`)
-    if(JSON.parse(localStorage.getItem('lib')).length === 0) {console.log('no data'); return []}
+    if(JSON.parse(localStorage.getItem('lib')) === null || JSON.parse(localStorage.getItem('lib')).length === 0) {console.log('no data'); return []}
     let libString = localStorage.getItem("lib")  
     let objectArr = JSON.parse(libString)
     let bookArr = objectArr.map((obj) => {
@@ -143,15 +143,6 @@ function generateHex() {
     return theStuff
 }
 
-//CODE
-
-//Initialize a global library array with the values from 'lib' in local storage or an empty array if it doesnt exist
-//Display the global library array via the displayBooks() function
-
-let myLibrary = loadLibrary()
-displayBooks()
-
-
 //use the addSomeBooks() command in the browser console to add some books to the app
 
 function addSomeBooks() { 
@@ -180,5 +171,15 @@ function addSomeBooks() {
     addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)
     addBookToLibrary('Harry Potter and the Chamber of Secrets', 'J. K. Rowling',450,false)
 }
+
+//CODE
+
+//Initialize a global library array with the values from 'lib' in local storage or an empty array if it doesnt exist
+//Display the global library array via the displayBooks() function
+
+var myLibrary = loadLibrary()
+displayBooks()
+
+
 
 

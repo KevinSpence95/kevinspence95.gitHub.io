@@ -105,7 +105,23 @@
       overflow: auto; /* Enable scroll if needed */
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      animation: modalBackgroundFadeIn 700ms;
+      transition: all 400ms ease-in;
     }
+
+    .fadedModal {
+      background-color: rgba(0,0,0,0); /* Black w/ opacity */
+    }
+
+    @keyframes modalBackgroundFadeIn {
+      from {
+        background-color: rgba(0,0,0,0);
+      }
+      to {
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+
 
     /* Modal content */
     .modal-content {
@@ -118,7 +134,7 @@
       width: min(500px,85%);
       position: relative;
       animation: modalContentEntrance 700ms;
-      transition: 500ms cubic-bezier(0.22, 0.61, 0.36, 1)
+      transition: 400ms cubic-bezier(0.22, 0.61, 0.36, 1)
     }
 
     @keyframes modalContentEntrance {

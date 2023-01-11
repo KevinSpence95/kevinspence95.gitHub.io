@@ -115,16 +115,18 @@ function displayBooks() {
 
 function openModal() {
     modal.firstElementChild.classList.remove('modalContentExitState')
+    modal.classList.remove('fadedModal')
     modal.classList.remove('hidden')
+    
 }
 
 function closeModal() {
     modal.firstElementChild.classList.add('modalContentExitState')
-    
+    modal.classList.add('fadedModal')
     setTimeout(() => {
         modal.classList.add('hidden')
         resetFormFields()
-    },700)
+    },400)
     // modal.classList.add('hidden')
     // resetFormFields()
 }

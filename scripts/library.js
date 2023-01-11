@@ -114,12 +114,19 @@ function displayBooks() {
 }
 
 function openModal() {
+    modal.firstElementChild.classList.remove('modalContentExitState')
     modal.classList.remove('hidden')
 }
 
 function closeModal() {
-    modal.classList.add('hidden')
-    resetFormFields()
+    modal.firstElementChild.classList.add('modalContentExitState')
+    
+    setTimeout(() => {
+        modal.classList.add('hidden')
+        resetFormFields()
+    },700)
+    // modal.classList.add('hidden')
+    // resetFormFields()
 }
 
 function resetFormFields() {
@@ -177,7 +184,7 @@ function addSomeBooks() {
 //Initialize a global library array with the values from 'lib' in local storage or an empty array if it doesnt exist
 //Display the global library array via the displayBooks() function
 
-var myLibrary = loadLibrary()
+const myLibrary = loadLibrary()
 displayBooks()
 
 

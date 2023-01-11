@@ -103,7 +103,6 @@
       width: 100%; /* Full width */
       height: 100%; /* Full height */
       overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       animation: modalBackgroundFadeIn 700ms;
       transition: all 400ms ease-in;
@@ -116,9 +115,6 @@
     @keyframes modalBackgroundFadeIn {
       from {
         background-color: rgba(0,0,0,0);
-      }
-      to {
-        background-color: rgba(0,0,0,0.4);
       }
     }
 

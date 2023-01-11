@@ -25,19 +25,16 @@ let closeModalBtn = document.querySelector('.close')
 
 // Add Event Listeners
 
-//on form submit, prevent default behavior and grab the values from the inputs, add a book with the user input to myLibrary 
+//on form submit,grab the values from the inputs, add a book with the user input to myLibrary, prevent default page refresh behavior
 form.addEventListener('submit', (e) => {
-    // e.preventDefault(); 
     let inputValues = [...inputs].map((input)=> {
         return input.type === 'checkbox' ? input.checked : input.value
     })
     inputValues.pop()
     addBookToLibrary(...inputValues)
     closeModal()
+    e.preventDefault(); 
 })
-
-
-
 
 window.addEventListener('click', (e) => {
     if(e.target === modal) {
@@ -63,21 +60,18 @@ closeModalBtn.addEventListener('touchend', () => {
 
 function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(new Book(...arguments))
-    // console.log(myLibrary)
     saveLibrary()
     displayBooks()
 }
 
 function removeBookFromLibrary(index) {
     myLibrary.splice(index,1)
-    // console.log(myLibrary)
     saveLibrary()
     displayBooks()
 }
 
 function saveLibrary() {
     localStorage.setItem("lib", JSON.stringify(myLibrary))
-    // console.log(`saved myLibrary to Local Storage: 'lib' ---> ${localStorage.getItem('lib')}  ${typeof localStorage.getItem('lib')}`)
 }
 
 function loadLibrary() {
@@ -89,7 +83,6 @@ function loadLibrary() {
         return turnObjectLiteralBackIntoBookObj(obj)
     })
     return bookArr
-
 }
 
 function turnObjectLiteralBackIntoBookObj(obj) {
@@ -117,8 +110,7 @@ function displayBooks() {
         </div>
         `
     }).join('')
-    bookShelf.innerHTML = bookElements;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    bookShelf.innerHTML = bookElements;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
 
 function openModal() {
@@ -126,7 +118,6 @@ function openModal() {
 }
 
 function closeModal() {
-   
     modal.classList.add('hidden')
     resetFormFields()
 }
@@ -161,7 +152,7 @@ let myLibrary = loadLibrary()
 displayBooks()
 
 
-
+//use the addSomeBooks() command in the browser console to add some books to the app
 
 function addSomeBooks() { 
     addBookToLibrary('The Lord of the Rings', 'J. R. R. Tolkien',400,false)

@@ -13,7 +13,7 @@
          <script src = "../scripts/tictactoe.js"></script>
     </head>
     <body>
-        <div class = "container-fluid text-center">
+        <div class="flex">
             <br></br><br></br>
             <h1 id="title">Tic Tac Toe</h1>
             <div id="menuDIV">
@@ -21,18 +21,16 @@
               <button id="XOselector"> Player 1: X </button>
               <button id="start"> Start </button>
             </div>
-            <div id="board">
-              <div id="buttons">
-                <button id="TLC">E</button>
-                <button id="TE">E</button>
-                <button id="TRC">E</button>
-                <button id="LE">E</button>
-                <button id="C">E</button>
-                <button id="RE">E</button>
-                <button id="BLC">E</button>
-                <button id="BE">E</button>
-                <button id="BRC">E</button>        
-              </div>
+            <div class="gridContainer" id="board">
+              <button class="square" id="TLC">E</button>
+              <button class="square" id="TE">E</button>
+              <button class="square" id="TRC">E</button>
+              <button class="square" id="LE">E</button>
+              <button class="square" id="C">E</button>
+              <button class="square" id="RE">E</button>
+              <button class="square" id="BLC">E</button>
+              <button class="square" id="BE">E</button>
+              <button class="square" id="BRC">E</button>
             </div>
             <div id="bottom">
               <h2 id = "player1Score">PLAYER 1 : 0</h2>

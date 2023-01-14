@@ -8,6 +8,12 @@ body{
     background-position: center; 
     background-size: 100% 100%;
   }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   #title{
     font-family: 'Permanent Marker';
@@ -42,28 +48,22 @@ body{
     margin:20px
   }
   
-  #board {
+  .gridContainer {
     height: 500px;
-    width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #000000;
-    border-radius: 6px;
-    margin-top:1%;
-    margin-bottom:10px;
+    width: 500px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
   }
   
   #TLC,#TE,#TRC,#LE,#C,#RE,#BLC,#BE,#BRC {
     outline: none;
     font-family: 'Permanent Marker';
     font-size:60px;
-    width:30%;
-    margin:6px;
-    padding:30px;
-    border-radius: 6px;
-    background-color: #FFFFFF;
-    color: white; 
-    
+    background-color: #F7F7F7;
+    color: #F7F7F7; 
+    border: none;
   }
   
   #player1Score{

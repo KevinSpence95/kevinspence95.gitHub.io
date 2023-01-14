@@ -414,7 +414,7 @@ function hide(str) {
 
 function unhide(str) {
   let x = document.getElementById(str)
-  x.style.display = 'block'
+  x.style.display = 'grid'
 }
 
 function reset() {

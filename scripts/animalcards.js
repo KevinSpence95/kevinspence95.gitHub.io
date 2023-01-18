@@ -3,7 +3,7 @@ async function fetchData() {
     const numAnimals = document.getElementById("input").value
     const response = await fetch(`https://zoo-animal-api.herokuapp.com/animals/rand/${numAnimals}`)
     if (!response.ok) {
-        throw new Error('Failed to retrieve images.')
+        throw new Error('Failed to retrieve images. The Zoo Animal API used for this app is no longer available, but I figured this shows my error handling abilities...')
     }
     const data = await response.json()
     createAnimalCards(data)

@@ -210,7 +210,11 @@ margin-top:.5rem;
 #about_section #about {
   margin:1rem;
 }
-
+/************************************************/
+.learn_more {
+  transition: height 450ms ease-in
+}
+/************************************************/
 .btn {
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 2rem;

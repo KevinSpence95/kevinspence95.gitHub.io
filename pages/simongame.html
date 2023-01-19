@@ -5,12 +5,9 @@
         <meta name = "description" content="Simon Game">
         <link rel ="stylesheet" href = "../css/simongame.css"/> 
         <script defer src = "../scripts/simongame.js"></script>
-        <!-- CDN - Bootstrap's CSS - Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!--CDN - jQuery library - needed by bootstrap and by me -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- CDN - Bootstrap's JavaScript Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
         <audio id = 'sound1'>
             <source src = 'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'>
         </audio>
@@ -25,18 +22,20 @@
         </audio>
     </head>
     <body>
-        <h1 id="simontitle" class = "container-fluid text-center">SIMON®</h1>
-        <div class = "container-fluid text-center" id="gameBoard">
-             <div id= "buttonContainer">
+        <h1 id="simontitle">SIMON®</h1>
+        <div id="gameBoard">
+            <div id= "buttonContainer">
                 <button id="btn-blue"></button>
                 <button id="btn-red"></button>
                 <button id="btn-green"></button>
                 <button id="btn-yellow"></button>
             </div>
             <div id="bottom">
-                <button id="on-off">ON/OFF</button>
-                <a id="display">0</a>
+                <button id="on-off">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                </button>
                 <button id="start">START</button>
+                <div id="display">0</div>
                 <button id="strict">STRICT</button>
             </div>
         </div>

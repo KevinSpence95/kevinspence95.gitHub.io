@@ -46,12 +46,14 @@ body {
 .btn {
   background-color: beige;
   border-radius: 5rem;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   box-shadow: var(--unpressedShadow);
   font-size: 1.1rem;
   border: 1px solid grey;
+  color: black;
+
 }
 .btn:active {
   box-shadow: var(--pressedShadow);
@@ -154,9 +156,16 @@ body {
   grid-row: 5/6;
 }
 
+.sign::before {
+  content:'(';
+}
 .sign {
   grid-column: 3/4;
   grid-row: 5/6;
+  position:relative;
+}
+.sign::after {
+  content: ')';
 }
 
 .add {

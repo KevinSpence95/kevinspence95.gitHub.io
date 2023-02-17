@@ -58,6 +58,10 @@ body {
   grid-template-columns: 21% 21% 16% 42%;
 }
 
+.red-text {
+  color:red !important;
+}
+
 #on-off {
   color: grey;
   background-color: black;
@@ -99,50 +103,49 @@ body {
   margin-left: 1.5rem;
 }
 
-#btn-blue {
-  background: #108fe8;
+button {
   border: 3px solid black;
   border-radius: 10%;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+}
+
+#btn-1 {
+  background: #108fe8;
   box-shadow: 0 -2px 0 3px #0d72b8 inset, 0 5px 5px rgba(3, 25, 41, 0.17),
     0 15px rgba(255, 255, 255, 0.25) inset;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
 }
 
-#btn-red {
+.pressedBlue {
+  background-color: #4da6ff;
+}
+
+#btn-2 {
   background: #e53030;
-  border: 3px solid black;
-  border-radius: 10%;
   box-shadow: 0 -2px 0 3px #c91919 inset, 0 5px 5px rgba(65, 8, 8, 0.17),
     0 15px rgba(255, 255, 255, 0.25) inset;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
+}
+.pressedRed {
+  background-color: #ff8080;
 }
 
-#btn-green {
+#btn-3 {
   background: #0ec518;
-  border: 3px solid black;
-  border-radius: 10%;
   box-shadow: 0 -2px 0 3px #0b9512 inset, 0 5px 5px rgba(0, 7, 1, 0.17),
     0 15px rgba(255, 255, 255, 0.25) inset;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
 }
-
-#btn-yellow {
+.pressedGreen {
+  background-color: #80ff80;
+}
+#btn-4 {
   background: #ffc334;
-  border: 3px solid black;
-  border-radius: 10%;
   box-shadow: 0 -2px 0 3px #ffb401 inset, 0 5px 5px rgba(103, 73, 0, 0.17),
     0 15px rgba(255, 255, 255, 0.25) inset;
-  cursor: pointer;
-  display: inline-block;
-  outline: none;
 }
-
+.pressedYellow {
+  background-color: #ffe680;
+}
 @media screen and (max-width: 650px) {
   #simontitle {
     font-size: 3rem;

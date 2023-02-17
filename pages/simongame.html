@@ -4,7 +4,7 @@
         <title> Kevin's Simon Game </title>
         <meta name = "description" content="Simon Game">
         <link rel ="stylesheet" href = "../css/simongame.css"/> 
-        <script defer src = "../scripts/simongame.js"></script>
+        <script defer src = "../scripts/simongameNew.js"></script>
         <!--CDN - jQuery library - needed by bootstrap and by me -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
@@ -25,18 +25,18 @@
         <h1 id="simontitle">SIMON®</h1>
         <div id="gameBoard">
             <div id= "buttonContainer">
-                <button id="btn-blue"></button>
-                <button id="btn-red"></button>
-                <button id="btn-green"></button>
-                <button id="btn-yellow"></button>
+                <button type='button' id="btn-1"></button>
+                <button type='button' id="btn-2"></button>
+                <button type='button' id="btn-3"></button>
+                <button type='button' id="btn-4"></button>
             </div>
             <div id="bottom">
-                <button id="on-off">
+                <button type='button' id="on-off">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
                 </button>
-                <button id="start">START</button>
+                <button type='button' id="start">START</button>
                 <div id="display">0</div>
-                <button id="strict">STRICT</button>
+                <button type='button' id="strict">STRICT</button>
             </div>
         </div>
     </body>

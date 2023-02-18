@@ -10,7 +10,7 @@ $(document).ready(function()
   let howManyPressed = 0;
   let round = 1;
   let startNewGame = true;
-  const sound1 = `../sounds/simonSound1.mp3`;
+  // const sound1 = `../sounds/simonSound1.mp3`;
   
   //----------------------------------------
   //GAME STATE BUTTONS

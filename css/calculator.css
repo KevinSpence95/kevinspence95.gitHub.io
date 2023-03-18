@@ -7,7 +7,7 @@
   --pressedShadow: rgba(50, 50, 93, 0.25) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   
-  background-color: burlywood;
+  background-color: #987460;
   background-image: url(https://images.unsplash.com/photo-1619976553860-b7ffbe9a093b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1636&q=80);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,8 +15,14 @@
   background-size: 100% 100%;
 }
 
+/* prevent double tap zoom on mobile */
+* {
+  touch-action: manipulation;
+}
+
 body {
   min-height: 100vh;
+  min-height: 100svh;
   font-family: "Audiowide";
   font-size: 1.25rem;
   margin: 0rem;
@@ -28,7 +34,7 @@ body {
 .calculator {
   margin-top: 1rem;
   width: min(80%, 280px);
-  height: min(80%, 500px);
+  height: min(75%, 550px);
   background-color: lightsteelblue;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

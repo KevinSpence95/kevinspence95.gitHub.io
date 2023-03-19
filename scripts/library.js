@@ -30,7 +30,6 @@ form.addEventListener('submit', (e) => {
     let inputValues = [...inputs].map((input)=> {
         return input.type === 'checkbox' ? input.checked : input.value
     })
-    inputValues.pop()
     addBookToLibrary(...inputValues)
     closeModal()
     e.preventDefault(); 
@@ -58,10 +57,11 @@ closeModalBtn.addEventListener('touchend', () => {
 
 //Helper Functions
 
-function addBookToLibrary(title, author, pages, read) {
+function addBookToLibrary(title, author, pages, read = false) {
     myLibrary.push(new Book(...arguments))
     saveLibrary()
     displayBooks()
+    console.log(myLibrary)
 }
 
 function removeBookFromLibrary(index) {
@@ -103,13 +103,15 @@ function displayBooks() {
             <h2 class="book__title">${book.title}</h2>
             <h3 class="book__author">${book.author}</h3>
             <div>
-                <input class="book__read" type="checkbox" ${book.read ? 'checked' : ''}  onclick = 'myLibrary[${i}].updateReadStatus(this.checked); console.log(myLibrary[${i}]); console.log(myLibrary);'>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                <input class="book__read" type="checkbox" ${book.read ? 'checked' : ''}  onclick = 'myLibrary[${i}].updateReadStatus(this.checked);'>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
                 ${book.pages ? `<p class="book__pages">${book.pages}</p>` : ''}
-                <p class="book__close" onclick = "console.log(this.parentNode.parentNode.getAttribute('data-index')); removeBookFromLibrary(this.parentNode.parentNode.getAttribute('data-index'))">&times;</p>
+                <p class="book__close" onclick = "removeBookFromLibrary(this.parentNode.parentNode.getAttribute('data-index'))">&times;</p>
             </div>
         </div>
         `
     }).join('')
+    //<input class="book__read" type="checkbox" ${book.read ? 'checked' : ''}  onclick = 'myLibrary[${i}].updateReadStatus(this.checked); console.log(myLibrary[${i}]); console.log(myLibrary);'> 
+    //<p class="book__close" onclick = "console.log(this.parentNode.parentNode.getAttribute('data-index')); removeBookFromLibrary(this.parentNode.parentNode.getAttribute('data-index'))">&times;</p>
     bookShelf.innerHTML = bookElements;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
 

@@ -119,7 +119,6 @@ function openModal() {
     modal.firstElementChild.classList.remove('modalContentExitState')
     modal.classList.remove('fadedModal')
     modal.classList.remove('hidden')
-    
 }
 
 function closeModal() {

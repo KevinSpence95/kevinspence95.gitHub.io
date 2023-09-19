@@ -27,59 +27,63 @@ const zeroThruNine = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const oneThruNine = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const operators = ["/", "*", "-", "+"];
 
-$(".seven").click(function () {
-  processInput("7");
-});
-$(".eight").click(function () {
-  processInput("8");
-});
-$(".nine").click(function () {
-  processInput("9");
-});
-$(".divide").click(function () {
-  processInput("/");
-});
-$(".four").click(function () {
-  processInput("4");
-});
-$(".five").click(function () {
-  processInput("5");
-});
-$(".six").click(function () {
-  processInput("6");
-});
-$(".multiply").click(function () {
-  processInput("*");
-});
-$(".one").click(function () {
-  processInput("1");
-});
-$(".two").click(function () {
-  processInput("2");
-});
-$(".three").click(function () {
-  processInput("3");
-});
-$(".subtract").click(function () {
-  processInput("-");
-});
-$(".zero").click(function () {
-  processInput("0");
-});
-$(".decimal").click(function () {
-  processInput(".");
-});
-$(".sign").click(function () {
-  processInput("$");
-});
-$(".add").click(function () {
-  processInput("+");
-});
-$(".equals").click(function () {
-  displayResult(false);
-});
-$(".clear").click(function () {
-  clear(true);
+document.addEventListener("click", (e) => {
+  switch (e.target.className.split(" ").at(-1)) {
+    case "seven":
+      processInput("7");
+      break;
+    case "eight":
+      processInput("8");
+      break;
+    case "nine":
+      processInput("9");
+      break;
+    case "divide":
+      processInput("/");
+      break;
+    case "four":
+      processInput("4");
+      break;
+    case "five":
+      processInput("5");
+      break;
+    case "six":
+      processInput("6");
+      break;
+    case "multiply":
+      processInput("*");
+      break;
+    case "one":
+      processInput("1");
+      break;
+    case "two":
+      processInput("2");
+      break;
+    case "three":
+      processInput("3");
+      break;
+    case "subtract":
+      processInput("-");
+      break;
+    case "zero":
+      processInput("0");
+      break;
+    case "decimal":
+      processInput(".");
+      break;
+    case "sign":
+      processInput("$");
+      break;
+    case "add":
+      processInput("+");
+      break;
+    case "equals":
+      displayResult(false);
+      break;
+    case "clear":
+      clear(true);
+      break;
+  }
 });
 document.addEventListener("keypress", (e) => {
   switch (e.key) {
@@ -121,7 +125,8 @@ document.addEventListener("keypress", (e) => {
       break;
     case "=":
       displayResult(false);
-      break;78
+      break;
+      78;
     case "-":
       processInput("-");
       break;
@@ -321,7 +326,7 @@ function displayResult(newOp) {
         result = eval(equationArr.join("")).toString().substring(0, 12);
         let formatResult = parseFloat(result);
         console.log(formatResult);
-      } //*** maybe need substring here to limit digits in result */
+      }
     }
     if (!secondOperand) {
       result = firstOperandArr.join("");
@@ -343,7 +348,7 @@ function displayResult(newOp) {
         result = eval(equationArr.join("")).toString().substring(0, 12);
         let formatResult = parseFloat(result);
         console.log(formatResult);
-      } //*** maybe need substring here to limit digits in result */
+      }
     }
     if (firstOperand && !secondOperand) {
       result = firstOperandArr.join("");

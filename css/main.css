@@ -350,14 +350,6 @@ figcaption {
     margin:auto;
 }
 
-/* .project_tile {
-  border-radius: 1.25rem;
-} */
-/* .project_tile:hover {
-  transform: scale(1.01); 
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-} */
-
 .project_tile a {
   display: block;
   height: 100%;
@@ -379,6 +371,10 @@ figcaption {
   transform: scale(1.05);
 }
 
+.codeLink {
+  color: cornflowerblue;
+  display: block;
+}
 
 #form_section {
   background-color:var(--sectionBG);

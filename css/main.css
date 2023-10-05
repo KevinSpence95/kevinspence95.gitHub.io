@@ -322,19 +322,16 @@ figcaption {
 #capabilities h3 {
   margin: 0.5rem 1rem 0.5rem 1rem;
 }
-#proficient1 {
+.proficient1 {
   color: rgb(251, 255, 0);
 }
-#proficient2 {
+.proficient2 {
   color: rgb(255, 136, 0);
 }
-#other {
-  color: rgb(108, 177, 255);
-}
-#applications {
+.applications {
   color: cornflowerblue;
 }
-#knowlegeOf {
+.knowlegeOf {
   color: rgb(21, 167, 21);
 }
 
